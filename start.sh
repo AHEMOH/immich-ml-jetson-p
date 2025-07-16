@@ -9,9 +9,12 @@ echo "Starting container ${CONTAINER_NAME}..."
 docker run -it --rm \
   --runtime nvidia \
   --gpus all \
-  --name ${CONTAINER_NAME} \
-  -e DISPLAY=$DISPLAY \
-  -v /tmp/.X11-unix/:/tmp/.X11-unix \
-  -v "$(pwd)/workspace:/workspace" \
-  ${IMAGE_NAME}:${TAG} \
-  /bin/bash
+  --privileged \
+  -v /proc/device-tree:/proc/device-tree:ro \
+  --device /dev/nvhost-ctrl \
+  --device /dev/nvhost-ctrl-gpu \
+  --device /dev/nvhost-prof-gpu \
+  --device /dev/nvhost-gpu \
+  --device /dev/nvmap \
+  nvcr.io/nvidia/l4t-jetpack:r35.5.0 \
+  /usr/bin/env bash
