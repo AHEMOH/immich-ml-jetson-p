@@ -1,6 +1,6 @@
 # Basis-Image: Jetson Linux 35.6.2 (JetPack 5.1.5)
 #FROM nvcr.io/nvidia/l4t-jetpack:r35.6.2
-FROM nvcr.io/nvidia/l4t-jetpack:r35.5.0
+FROM nvcr.io/nvidia/l4t-jetpack:r35.4.1
 
 # Set non-interactive
 ENV DEBIAN_FRONTEND=noninteractive
