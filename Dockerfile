@@ -1,5 +1,5 @@
-# Use the official NVIDIA JetPack 5.1.3 L4T base image
-FROM nvcr.io/nvidia/l4t-jetpack:r35.5.0
+# Basis-Image: Jetson Linux 35.6.2 (JetPack 5.1.5)
+FROM nvcr.io/nvidia/l4t-jetpack:r35.6.2
 
 # Set non-interactive
 ENV DEBIAN_FRONTEND=noninteractive
